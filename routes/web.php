@@ -138,3 +138,16 @@ Route::resource('photos', PhotoController::class)->except([
     'update',
     'destroy'
 ]);
+
+// Route::get('/greeting', function () { 
+//     return view('hello', ['name' => 'Fitriani']); 
+//     }); 
+
+Route::get('/greeting', function () {
+    return view('blog.hello', ['name' => 'Fitriani']);
+});
+
+Route::get('/greeting', [
+    WelcomeController::class,
+    'greeting'
+]);
